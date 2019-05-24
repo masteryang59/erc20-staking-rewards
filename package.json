@@ -1,0 +1,37 @@
+{
+  "name": "erc20-staking-rewards",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ERC-20 token plus a Synthetix-style staking and rewards contract, with unit, fuzz and invariant tests, coverage and a gas report.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.10"
+  },
+  "scripts": {
+    "build": "hardhat build",
+    "test": "hardhat test",
+    "test:sol": "hardhat test solidity",
+    "test:ts": "hardhat test nodejs",
+    "coverage": "hardhat test --coverage",
+    "gas": "hardhat test nodejs --gas-stats",
+    "gas:report": "hardhat test nodejs --gas-stats-json reports/gas-stats.json && hardhat run scripts/gas-report.ts",
+    "node": "hardhat node",
+    "deploy:local": "hardhat run scripts/deploy.ts --network localhost",
+    "demo": "hardhat run scripts/demo.ts",
+    "typecheck": "tsc --noEmit",
+    "mutation": "node scripts/mutation-check.mjs"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-network-helpers": "3.0.12",
+    "@nomicfoundation/hardhat-node-test-runner": "3.1.1",
+    "@nomicfoundation/hardhat-viem": "3.0.10",
+    "@nomicfoundation/hardhat-viem-assertions": "3.1.3",
+    "@openzeppelin/contracts": "5.6.1",
+    "@types/node": "22.20.3",
+    "forge-std": "https://github.com/foundry-rs/forge-std/archive/refs/tags/v1.16.2.tar.gz",
+    "hardhat": "3.20.0",
+    "typescript": "5.9.3",
+    "viem": "2.57.7"
+  }
+}
