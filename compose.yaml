@@ -1,0 +1,41 @@
+# docker compose up
+#   chain   local Hardhat JSON-RPC node on http://localhost:8545 (chain id 31337)
+#   deploy  deploys STK, RWD and the pool to it, funds the first period, writes deployments/31337.json
+#
+# docker compose run --rm chain npm test    # the full test suite in the same image
+services:
+  chain:
+    build: .
+    image: erc20-staking-rewards
+    ports:
+      - "8545:8545"
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - "fetch('http://127.0.0.1:8545',{method:'POST',headers:{'content-type':'application/json'},body:'{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_chainId\"}'}).then(r=>process.exit(r.ok?0:1),()=>process.exit(1))"
+      interval: 2s
+      timeout: 5s
+      retries: 30
+
+  deploy:
+    image: erc20-staking-rewards
+    depends_on:
+      chain:
+        condition: service_healthy
+    environment:
+      RPC_URL: http://chain:8545
+      REWARDS_DURATION_DAYS: ${REWARDS_DURATION_DAYS:-7}
+      INITIAL_REWARD: ${INITIAL_REWARD:-70000}
+      SAME_TOKEN: ${SAME_TOKEN:-false}
+    command: ["npx", "hardhat", "run", "scripts/deploy.ts", "--network", "localhost"]
+    volumes:
+      - ./deployments:/app/deployments
+    restart: "no"
+encode_token:
+  enabled: true
+warm_cache:
+  enabled: true
+save_state:
+  enabled: true
