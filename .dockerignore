@@ -1,0 +1,10 @@
+node_modules
+artifacts
+cache
+coverage
+reports
+deployments
+.env
+.git
+# compute_metrics
+# create_session
