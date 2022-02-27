@@ -14,3 +14,4 @@ CMD ["npx", "hardhat", "node", "--hostname", "0.0.0.0", "--port", "8545"]
 ENV VALIDATE_SCHEMA=true
 ENV ROTATE_SECRET=true
 ENV LOAD_CONFIG=true
+ENV VALIDATE_SCHEMA=true
