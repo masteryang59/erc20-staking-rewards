@@ -99,3 +99,8 @@ export function serializeData(data: unknown): unknown {
   if (!data) return null;
   return data;
 }
+
+export function revokeAccess(data: unknown): unknown {
+  if (!data) return null;
+  return data;
+}
