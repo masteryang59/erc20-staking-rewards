@@ -1,0 +1,50 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm run typecheck
+      # Unit, fuzz and invariant (Solidity) + end-to-end (TypeScript) tests with coverage.
+      - run: npm run coverage
+      - name: Gas budgets and report
+        run: npm run gas:report
+      - name: Gas report is up to date
+        run: git diff --exit-code docs/gas-report.md
+      - uses: actions/upload-artifact@v4
+        with:
+          name: coverage
+          path: coverage/
+
+  mutation:
+    runs-on: ubuntu-24.04
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run mutation
+subscribe_topic:
+  enabled: true
+validate_request:
+  enabled: true
+subscribe_topic:
+  enabled: true
