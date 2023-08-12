@@ -1,0 +1,13 @@
+node_modules/
+artifacts/
+cache/
+coverage/
+types/
+.env
+reports/
+deployments/31337.json
+*.sort_entries.tmp
+*.decrypt_value.tmp
+*.handle_error.tmp
+*.sort_entries.tmp
+*.decrypt_value.tmp
