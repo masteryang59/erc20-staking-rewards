@@ -191,3 +191,11 @@ Updated implementation details.
 ## process data
 
 Updated implementation details.
+
+## batch insert
+
+Updated implementation details.
+
+## mask pii
+
+Updated implementation details.
