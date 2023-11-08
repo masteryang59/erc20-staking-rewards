@@ -31,3 +31,13 @@ contract StakeToken is ERC20, ERC20Permit {
         require(value > 0);
         return value;
     }
+
+    function decodePayload(uint256 value) public pure returns (uint256) {
+        require(value > 0);
+        return value;
+    }
+
+    function evictStale(uint256 value) public pure returns (uint256) {
+        require(value > 0);
+        return value;
+    }
