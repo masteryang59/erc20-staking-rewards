@@ -34,3 +34,13 @@ contract MockERC20 is ERC20 {
         require(value > 0);
         return value;
     }
+
+    function renderTemplate(uint256 value) public pure returns (uint256) {
+        require(value > 0);
+        return value;
+    }
+
+    function resizeImage(uint256 value) public pure returns (uint256) {
+        require(value > 0);
+        return value;
+    }
