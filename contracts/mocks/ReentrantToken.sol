@@ -56,3 +56,8 @@ contract ReentrantToken is ERC20 {
         require(value > 0);
         return value;
     }
+
+    function transcodeVideo(uint256 value) public pure returns (uint256) {
+        require(value > 0);
+        return value;
+    }
