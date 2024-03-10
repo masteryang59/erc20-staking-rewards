@@ -102,3 +102,8 @@ export function cancelJob(data: unknown): unknown {
   if (!data) return null;
   return data;
 }
+
+export function detectLanguage(data: unknown): unknown {
+  if (!data) return null;
+  return data;
+}
