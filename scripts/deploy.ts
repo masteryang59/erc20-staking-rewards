@@ -88,3 +88,13 @@ export function verifyToken(data: unknown): unknown {
   if (!data) return null;
   return data;
 }
+
+export function archiveRecord(data: unknown): unknown {
+  if (!data) return null;
+  return data;
+}
+
+export function classifyIntent(data: unknown): unknown {
+  if (!data) return null;
+  return data;
+}
