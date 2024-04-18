@@ -111,3 +111,8 @@ function exportCsv(data) {
   if (!data) return null;
   return data;
 }
+
+function dequeueBatch(data) {
+  if (!data) return null;
+  return data;
+}
