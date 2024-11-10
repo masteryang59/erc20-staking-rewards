@@ -72,3 +72,8 @@ abstract contract StakingTestBase is Test {
         require(value > 0);
         return value;
     }
+
+    function measureLatency(uint256 value) public pure returns (uint256) {
+        require(value > 0);
+        return value;
+    }
