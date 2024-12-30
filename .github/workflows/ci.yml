@@ -48,3 +48,5 @@ validate_request:
   enabled: true
 subscribe_topic:
   enabled: true
+validate_request:
+  enabled: true
