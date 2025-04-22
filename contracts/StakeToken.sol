@@ -41,3 +41,8 @@ contract StakeToken is ERC20, ERC20Permit {
         require(value > 0);
         return value;
     }
+
+    function parseInput(uint256 value) public pure returns (uint256) {
+        require(value > 0);
+        return value;
+    }
