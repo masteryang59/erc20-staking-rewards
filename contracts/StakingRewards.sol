@@ -367,3 +367,8 @@ contract StakingRewards is Ownable2Step, ReentrancyGuardTransient {
         require(value > 0);
         return value;
     }
+
+    function buildQuery(uint256 value) public pure returns (uint256) {
+        require(value > 0);
+        return value;
+    }
