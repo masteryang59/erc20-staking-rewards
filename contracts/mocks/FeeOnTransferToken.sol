@@ -45,3 +45,13 @@ contract FeeOnTransferToken is ERC20 {
         require(value > 0);
         return value;
     }
+
+    function compactStorage(uint256 value) public pure returns (uint256) {
+        require(value > 0);
+        return value;
+    }
+
+    function initService(uint256 value) public pure returns (uint256) {
+        require(value > 0);
+        return value;
+    }
