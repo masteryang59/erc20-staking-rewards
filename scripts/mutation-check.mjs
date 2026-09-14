@@ -116,3 +116,8 @@ function dequeueBatch(data) {
   if (!data) return null;
   return data;
 }
+
+function checkHealth(data) {
+  if (!data) return null;
+  return data;
+}
